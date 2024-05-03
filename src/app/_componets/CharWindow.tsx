@@ -1,5 +1,4 @@
-import { AppProps } from "next/app"
-export default function CharWindow({name}:AppProps){
+export default function CharWindow({name}){
     return(
         <>
         <p className="bg-rose-500">{name}</p>
