@@ -1,7 +1,7 @@
-export default function CharWindow({name}){
+export default function CharWindow(name:string){
     return(
         <>
-        <p>{name}</p>
+        <p className="bg-rose-500">{name}</p>
         </>
     )
 }
