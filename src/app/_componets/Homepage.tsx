@@ -3,7 +3,7 @@ import CharWindow from "./CharWindow"
 export default function Homepage(){
     let char = ["sheik", "corrion", "marth"]
     let listOfCombos = char.map((item) => (
-        <CharWindow key={char} name={item} />
+        <CharWindow key={char.indexOf(item)} name={item} />
         ));
     return(
         <>
