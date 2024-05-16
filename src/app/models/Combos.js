@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGO_URL4)
 mongoose.Promise = global.Promise
 
 const comboSchema = new Schema(
@@ -11,6 +11,6 @@ const comboSchema = new Schema(
     }
 )
 
-const Combo = mongoose.models.Combo || mongoose.model("Combo", comboSchema)
+const Combo = mongoose.models.combomodel || mongoose.model("combomodel", comboSchema)
 
 export default Combo
