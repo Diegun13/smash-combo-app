@@ -10,7 +10,7 @@ export  default async function GetChar(){
     return feet
 
     }catch(error){
-        return  "stuff not working" //NextResponse.json({error: error.message})
+        return NextResponse.json({error: error.message})
         
     }
     
