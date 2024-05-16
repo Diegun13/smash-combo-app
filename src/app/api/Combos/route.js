@@ -1,13 +1,12 @@
-import connectMongoDB from "../../../lib/mongodb"
+import connectMongoDB from "../../lib/mongodb"
 import { NextResponse } from "next/server"
 import Combo from "../../models/Combos"
 
-export  default async function GetChar(){
+export  default async function GetCombos(){
    try{ 
-    // let data = await connectMongoDB()
-    // const res = data.json
-    const feet = JSON.parse(JSON.stringify(await Combo.find()))
-    return feet
+    await connectMongoDB()
+    const res = JSON.parse(JSON.stringify(await Combo.find()))
+    return res //NextResponse.json(res)
 
     }catch(error){
         return NextResponse.json({error: error.message})

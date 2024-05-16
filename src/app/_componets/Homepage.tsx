@@ -1,6 +1,14 @@
 import Link from "next/link"
 import CharWindow from "./CharWindow"
-export default function Homepage(){
+import GetCombos from "../api/Combos/route";
+ 
+
+
+export default async function Homepage(){
+    let res = await GetCombos()
+    console.log(res, "pee")
+
+
     let char = ["sheik", "corrion", "marth", "fox"]
     let characterSelect = char.map((item) => (
         <CharWindow key={char.indexOf(item)} name={item} />
