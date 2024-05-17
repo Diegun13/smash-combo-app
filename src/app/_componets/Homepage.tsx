@@ -8,8 +8,8 @@ export default async function Homepage(){
     let res = await GetCombos()
     console.log(res, "pee")
 
-
-    let char = ["sheik", "corrion", "marth", "fox"]
+    let char = res.map((item)=>(item.name))
+    // let char = ["sheik", "corrion", "marth", "fox"]
     let characterSelect = char.map((item) => (
         <CharWindow key={char.indexOf(item)} name={item} />
         ));
