@@ -1,6 +1,6 @@
 import Link from "next/link"
 import CharWindow from "./CharWindow"
-import GetCombos from "../api/Combos/route";
+import GetCombos from "../api/Combos/GetCombos";
  
 
 
