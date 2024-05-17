@@ -1,25 +1,24 @@
-import Link from "next/link"
 import CharWindow from "./CharWindow"
 import GetCombos from "../api/Combos/GetCombos";
  
 
 
 export default async function Homepage(){
-    let res = await GetCombos()
-    console.log(res, "pee")
+    let char = await GetCombos()
 
 
 interface People {
+    _id?: string
     img?: string
     name?: string
     combos?: object
     ids?: string
 }
 
-    let char = res.map((item: People)=>(item.name))
+
     // let char = ["sheik", "corrion", "marth", "fox"]
-    let characterSelect = char.map((item) => (
-        <CharWindow key={char.indexOf(item)} name={item} />
+    let characterSelect = char.map((item: People) => (
+        <CharWindow key={item.ids} peps={item} />
         ));
     return(
         <>
