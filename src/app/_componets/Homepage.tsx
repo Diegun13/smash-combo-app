@@ -8,7 +8,15 @@ export default async function Homepage(){
     let res = await GetCombos()
     console.log(res, "pee")
 
-    let char = res.map((item)=>(item.name))
+
+interface People {
+    img?: string
+    name?: string
+    combos?: object
+    ids?: string
+}
+
+    let char = res.map((item: People)=>(item.name))
     // let char = ["sheik", "corrion", "marth", "fox"]
     let characterSelect = char.map((item) => (
         <CharWindow key={char.indexOf(item)} name={item} />
