@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
       <Link href="/">
-      <div className='bg-slate-400 mx-5'>Samsh combos</div>
+      <div className='bg-slate-400 p-1 text-center'>Samsh combos</div>
       </Link>
         {children}
         </body>

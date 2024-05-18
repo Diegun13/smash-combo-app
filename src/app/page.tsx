@@ -1,11 +1,10 @@
-import Homepage from "./_componets/Homepage";
+import Homepage from "./Homepage";
 
 
 export default async function Home() {
 
   return (
     <main>
-      {"test placeholder"}
       <Homepage/>
     </main>
   );
