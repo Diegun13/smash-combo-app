@@ -20,8 +20,13 @@ export default function CharWin({ char }: { char: People }) {
       <main className="bg-rose-400 flex flex-col justify-center text-center">
         <Link href={`/${char.name}`}>
           <p>{char.name}</p>
-
-          <p>{char.img}</p>
+          <img src={char.img} alt={char.name} />
+          {/* <Image
+          src={char.img}
+          width={500}
+          height={500}
+          alt={char.name}
+          /> */}
         </Link>
       </main>
     </>

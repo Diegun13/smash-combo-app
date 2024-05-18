@@ -1,5 +1,4 @@
 import CharWin from "./_componets/CharWin";
-import CharWindow from "./_componets/CharWindow";
 import GetCombos from "./api/Combos/GetCombos";
 
 export default async function Homepage() {
