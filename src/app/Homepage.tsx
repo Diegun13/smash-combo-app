@@ -23,7 +23,7 @@ interface People{
   ));
   return (
     <>
-      <div className="bg-rose-900">
+      <div className="bg-rose-900 text-center pt-8">
         <h1>Select Your character</h1>
         <section className="flex gap-4 flex-wrap">{characterSelect}</section>
       </div>

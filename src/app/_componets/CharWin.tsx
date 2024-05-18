@@ -17,16 +17,15 @@ interface People {
 export default function CharWin({ char }: { char: People }) {
   return (
     <>
-      <main className="bg-rose-400 flex flex-col justify-center text-center">
+      <main className="bg-rose-400 flex flex-col text-center justify-center items-center">
         <Link href={`/${char.name}`}>
-          <p>{char.name}</p>
-          <img src={char.img} alt={char.name} />
-          {/* <Image
+          <p className="absolute text-center self-center bg-slate-400">{char.name}</p>
+          <Image
           src={char.img}
-          width={500}
-          height={500}
+          width={100}
+          height={100}
           alt={char.name}
-          /> */}
+          />
         </Link>
       </main>
     </>

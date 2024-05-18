@@ -37,13 +37,13 @@ export default async function Page({ params }: {
     params: {id: string}
 }){
     const Meet:people = await getPeople((params.id))
-    console.log(Meet)
     let listofPeople = Meet.combos.map((item:combos)=> <ComboWin key={item.id} combos={item}/>)
     return(
-        <main className="flex flex-col">
-            id : {params.id}
+        <main className=" pt-8 text-center justify-center items-center bg-rose-400 h-dvh">
             <h1>ID: {Meet.name}</h1>
+            <section className="flex flex-wrap gap-2">
             {listofPeople? listofPeople : `notheing here for ${params.id}`}
+            </section>
         </main>
     )
 }
