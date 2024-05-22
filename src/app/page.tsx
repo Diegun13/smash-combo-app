@@ -1,11 +1,9 @@
 import Homepage from "./Homepage";
 
 
-export default async function Home() {
+export default function Home() {
 
   return (
-    <main>
-      <Homepage/>
-    </main>
+      <Homepage />
   );
 }

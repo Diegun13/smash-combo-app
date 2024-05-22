@@ -1,5 +1,6 @@
 import GetCombos from "../api/Combos/GetCombos"
 import ComboWin from "../_componets/ComboWin"
+import ComboNav from "../_componets/ComboNav"
 
 interface combos{
     id: string
@@ -41,8 +42,9 @@ export default async function Page({ params }: {
     return(
         <main className=" pt-8 text-center justify-center items-center bg-rose-400 h-dvh">
             <h1>ID: {Meet.name}</h1>
+            <ComboNav combos={Meet.combos} />
             <section className="flex flex-wrap gap-2">
-            {listofPeople? listofPeople : `notheing here for ${params.id}`}
+                {listofPeople? listofPeople : `notheing here for ${params.id}`}
             </section>
         </main>
     )

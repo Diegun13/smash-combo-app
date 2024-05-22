@@ -8,6 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        "UFD-nameplate": "#ffc640",
+        "UFD-bg": "#151515",
+        "UFD-Combo-bg": "#222",
+        "UFD-Char-bg": "#333"
+      },
+      fontFamily: {
+        poppins: ["Poppins" , "sans-serif"],
+      },
+      dropShadow: {
+        xl: "1px 1px 6px #111",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
