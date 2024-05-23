@@ -1,11 +1,13 @@
 import CharacterWin from "./_componets/CharacterWin";
 import GetCombos from "./api/Combos/GetCombos";
 
-interface combos{
-  id: string
-  moves: string
-  isTrue: boolean
-  notes: string
+interface combos {
+  id: string;
+  moves: string;
+  isTrue: boolean;
+  notes: string;
+  doesKill: boolean;
+  startingPercent: number;
 }
 interface People{
   _id: string

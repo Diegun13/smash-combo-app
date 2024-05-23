@@ -1,11 +1,12 @@
 import Link from "next/link";
-import ComboWin from "./ComboWin";
 import Image from "next/image";
 interface combos {
   id: string;
   moves: string;
   isTrue: boolean;
   notes: string;
+  doesKill: boolean;
+  startingPercent: number;
 }
 interface People {
   _id: string;

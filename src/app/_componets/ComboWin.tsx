@@ -3,6 +3,8 @@ interface combos {
   moves: string;
   isTrue: boolean;
   notes: string;
+  doesKill: boolean;
+  startingPercent: number;
 }
 
 interface people {
