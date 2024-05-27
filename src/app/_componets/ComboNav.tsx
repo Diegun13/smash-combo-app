@@ -1,16 +1,17 @@
 "use client";
 import { useState } from "react";
 import ComboWin from "./ComboWin";
-
+import Image from "next/image";
 interface combos {
   id: string;
   moves: string;
   isTrue: boolean;
+  gif: string;
   notes: string;
   doesKill: boolean;
   startingPercent: number;
 }
-export default function ComboNav({ combos }: { combos: Array<combos> }) {
+export default function ComboNav({ combos, charImg }: { combos: Array<combos>, charImg: string}) {
   const [filterMove, SetFilterMove] = useState("all");
   const [filterPercent, SetFilterPercent] = useState("all");
 
@@ -88,65 +89,83 @@ export default function ComboNav({ combos }: { combos: Array<combos> }) {
   });
 
   return (
-    <section>
-      <form>
-        <label htmlFor="statingMove">Starting Move</label>
-        <select
-          id="statingMove"
-          className="text-black"
-          value={filterMove}
-          onChange={handleFilterMoveChange}
-        >
-          <option value="all">all</option>
-          {optionsMoveArray.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
+    <section className=" flex h-screen bg-blue-300">
+      <div className="w-36 bg-red-700">
+        <Image 
+        className="pb-3"
+        src={charImg}
+        width={144}
+        height={144}
+        alt="Character Image"
+        />
+        <form className="flex flex-col flex-wrap">
+          <label htmlFor="statingMove">Starting Move</label>
+          <select
+            className="text-center text-black"
+            id="statingMove"
+            value={filterMove}
+            onChange={handleFilterMoveChange}
+          >
+            <option value="all">all</option>
+            {optionsMoveArray.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
 
-        <label htmlFor="Percent">Percent</label>
-        <select
-          id="Percent"
-          className="text-black"
-          value={filterPercent}
-          onChange={handleFilterPercentChange}
-        >
-          <option value="all">all</option>
-          {optionsPercentArray.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
-        <label htmlFor="isTrue">True</label>
-        <input
-          type="checkbox"
-          id="isTrue"
-          checked={isTrue}
-          onChange={handleTrueCheckbox}
-        />
-        <label htmlFor="Kills">Kills</label>
-        <input
-          type="checkbox"
-          id="Kills"
-          checked={doesKill}
-          onChange={handleKillCheckbox}
-        />
-      </form>
-      <button
-        type="button"
-        onClick={() => {
-          SetFilterMove("all");
-          SetFilterPercent("all");
-          setIsTrue(false);
-          setDoesKIll(false);
-        }}
-      >
-        Reset
-      </button>
-      <div className="flex flex-wrap gap-2 items-center justify-center">
-        {displayCombos.length === 0 ? <h1>No Combos Found</h1> : listofCombos}
+          <label htmlFor="Percent">Percent</label>
+          <select
+            className="text-center text-black"
+            id="Percent"
+            value={filterPercent}
+            onChange={handleFilterPercentChange}
+          >
+            <option value="all">all</option>
+            {optionsPercentArray.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          <div className="flex gap-3 justify-center">
+            <label htmlFor="isTrue">True
+            <input
+              type="checkbox"
+              id="isTrue"
+              checked={isTrue}
+              onChange={handleTrueCheckbox}
+            />
+            </label>
+            <label htmlFor="Kills">Kills
+            <input
+              type="checkbox"
+              id="Kills"
+              checked={doesKill}
+              onChange={handleKillCheckbox}
+            />
+            </label>
+          </div>
+
+          <button
+            className="bg-blue-500 rounded"
+            type="button"
+            onClick={() => {
+              SetFilterMove("all");
+              SetFilterPercent("all");
+              setIsTrue(false);
+              setDoesKIll(false);
+            }}
+          >
+            Reset
+          </button>
+        </form>
+      </div>
+
+      <div className=" overflow-scroll mx-auto">
+        <div className="flex flex-col   gap-2 ">
+          {displayCombos.length === 0 ? <h1>No Combos Found</h1> : listofCombos}
+        </div>
       </div>
     </section>
   );
