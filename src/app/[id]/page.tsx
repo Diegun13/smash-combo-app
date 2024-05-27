@@ -5,6 +5,7 @@ import ComboNav from "../_componets/ComboNav";
 interface combos {
   id: string;
   moves: string;
+  gif: string;
   isTrue: boolean;
   notes: string;
   doesKill: boolean;

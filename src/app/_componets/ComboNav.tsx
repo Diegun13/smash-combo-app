@@ -5,8 +5,8 @@ import Image from "next/image";
 interface combos {
   id: string;
   moves: string;
-  isTrue: boolean;
   gif: string;
+  isTrue: boolean;
   notes: string;
   doesKill: boolean;
   startingPercent: number;
