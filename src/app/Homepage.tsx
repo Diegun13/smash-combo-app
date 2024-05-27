@@ -4,6 +4,7 @@ import GetCombos from "./api/Combos/GetCombos";
 interface combos {
   id: string;
   moves: string;
+  gif: string;
   isTrue: boolean;
   notes: string;
   doesKill: boolean;
